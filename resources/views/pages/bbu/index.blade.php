@@ -2,6 +2,11 @@
 
 @section('title', 'SPKBalita | Data Berat Badan menurut Umur')
 
+@push('addon-style')
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+@endpush
+
 @section('content')
     <div class="content-wrapper">
         <div class="content-header">
@@ -39,7 +44,6 @@
                                             <th class="text-center">+1SD</th>
                                             <th class="text-center">+2SD</th>
                                             <th class="text-center">+3SD</th>
-                                            <th class="text-right">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -53,18 +57,6 @@
                                                 <td class="text-center">{{ $data->plus1sd }}</td>
                                                 <td class="text-center">{{ $data->plus2sd }}</td>
                                                 <td class="text-center">{{ $data->plus3sd }}</td>
-                                                <td class="text-right">
-                                                    <a href="/bbu/{{ $data->id }}/edit" class="btn btn-warning">
-                                                        <i class="nav-icon fas fa-edit"></i>
-                                                    </a>
-                                                    <form action="{{ route('bbu.destroy', $data->id) }}" method="POST"
-                                                        class="d-inline" onsubmit="return confirm('Yakin Hapus Data?')">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button class="btn btn-danger" type="submit" method="POST"><i
-                                                                class="nav-icon fas fa-trash"></i></button>
-                                                    </form>
-                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -79,6 +71,8 @@
     </div>
 @endsection
 @push('addon-script')
+    <!-- DataTables  & Plugins -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('#tableData').DataTable();

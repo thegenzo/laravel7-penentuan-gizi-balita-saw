@@ -173,6 +173,8 @@ class BalitaController extends Controller
             $data['bobot_imtu'] = 1;
         }
 
+        
+
         Balita::create($data);
 
         Alert::success('Data Berhasil Ditambahkan');

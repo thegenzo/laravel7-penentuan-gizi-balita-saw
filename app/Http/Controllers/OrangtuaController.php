@@ -125,9 +125,9 @@ class OrangtuaController extends Controller
     public function destroy($id)
     {
         $orangtua = Orangtua::with('user')->find($id);
+        $user = User::where('id', $orangtua->id_user)->delete();
         $orangtua->delete();
-
-        $user = User::where('id', $orangtua->id)->delete();
+        
 
         Alert::success('Berhasil', 'Data Orang Tua Berhasil Dihapus');
 

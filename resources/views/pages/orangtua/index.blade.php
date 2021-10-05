@@ -2,6 +2,11 @@
 
 @section('title', 'SPKBalita | Data Orang Tua')
 
+@push('addon-style')
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+@endpush
+
 @section('content')
     <div class="content-wrapper">
         <div class="content-header">
@@ -24,8 +29,10 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
+                                @if(auth()->user()->level == 'admin')
                                 <a href="{{ url('/orangtua/create') }}" class="btn btn-info float-right mb-2">Tambah Data</a>
-                                <table id="tableData" class="table table-bordered">
+                                @endif
+                                <table id="tableData" class="table table-stripped">
                                     <thead>
                                         <tr>
                                             <th class="text-center">No</th>
@@ -34,6 +41,7 @@
                                             <th>Nama Balita</th>
                                             <th>Jenis Kelamin</th>
                                             <th>Nomor Handphone</th>
+                                            <th>Nomor Darurat</th>
                                             <th>Alamat</th>
                                             @if(auth()->user()->level == 'admin')
                                             <th class="text-right">Action</th>
@@ -49,6 +57,7 @@
                                                 <td>{{ $data->nama_balita }}</td>
                                                 <td>{{ $data->jenis_kelamin }}</td>
                                                 <td>{{ $data->no_hp }}</td>
+                                                <td>{{ $data->no_darurat }}</td>
                                                 <td>{{ $data->alamat }}</td>
                                                 @if(auth()->user()->level == 'admin')
                                                 <td class="text-right">
@@ -77,6 +86,8 @@
     </div>
 @endsection
 @push('addon-script')
+<!-- DataTables  & Plugins -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
 <script type="text/javascript">
   $(document).ready( function () {
     $('#tableData').DataTable();

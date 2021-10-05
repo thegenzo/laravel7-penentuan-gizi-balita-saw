@@ -46,7 +46,7 @@
                                     </div>
                                     <br>
                                     <a href="/imtu" class="btn btn-primary">Kembali</a>
-                                    <button type="submit" class="btn btn-success btn-fill pull-right">Kirim</button>
+                                    <button type="submit" class="btn btn-success btn-fill pull-right">Simpan</button>
                                 </form>
                             </div>
                             <!-- /.card-body -->

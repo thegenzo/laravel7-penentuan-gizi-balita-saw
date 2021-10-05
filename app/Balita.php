@@ -14,4 +14,9 @@ class Balita extends Model
     {
         return $this->belongsTo('App\Orangtua', 'id_balita');
     }
+
+    public function rekapan()
+    {
+        return $this->hasOne('App\Rekapan', 'id_balita');
+    }
 }

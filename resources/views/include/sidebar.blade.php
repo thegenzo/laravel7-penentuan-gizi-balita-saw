@@ -92,6 +92,16 @@
               </p>
             </a>
           </li>
+          @if (auth()->user()->level == 'admin')
+          <li class="nav-item">
+            <a href="/rekapan" class="nav-link {{ request()->is('rekapan') ? 'active' : ''}}">
+              <i class="nav-icon far fa-clipboard"></i>
+              <p>
+                Rekapan SAW
+              </p>
+            </a>
+          </li>
+          @endif
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

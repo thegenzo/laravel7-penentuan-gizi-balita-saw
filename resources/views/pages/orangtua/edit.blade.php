@@ -48,16 +48,26 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Nomor handphone yang bisa dihubungi</label>
-                                        <input type="number" name="no_hp" class="form-control" value="{{ $orangtua->no_hp }}" required>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Nomor handphone yang bisa dihubungi</label>
+                                                <input type="number" name="no_hp" class="form-control" value="{{ $orangtua->no_hp }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Nomor Darurat</label>
+                                                <input type="number" name="no_darurat" class="form-control" value="{{ $orangtua->no_darurat }}" required>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Alamat</label>
                                         <textarea class="form-control" rows="4" columns="3" name="alamat" required>{{ $orangtua->alamat }}</textarea>
                                     </div>
                               <a href="/orangtua" class="btn btn-primary">Kembali</a>
-                              <button type="submit" class="btn btn-success btn-fill pull-right">Kirim</button>
+                              <button type="submit" class="btn btn-success btn-fill pull-right">Simpan</button>
                             </form>
                           </div>
                           <!-- /.card-body -->

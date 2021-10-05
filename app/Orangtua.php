@@ -8,7 +8,7 @@ class Orangtua extends Model
 {
     protected $table = 'orangtua';
 
-    protected $fillable = ['id_user', 'nama_ibu', 'nama_balita', 'jenis_kelamin', 'no_hp', 'alamat'];
+    protected $fillable = ['id_user', 'nama_ibu', 'nama_balita', 'jenis_kelamin', 'no_hp', 'no_darurat', 'alamat'];
 
     // membuat relasi dengan tabel user
     public function user()

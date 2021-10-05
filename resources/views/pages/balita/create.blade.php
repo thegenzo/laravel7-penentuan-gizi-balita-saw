@@ -1,6 +1,13 @@
 @extends('layout.app')
 
 @section('title', 'SPKBalita | Tambah Data')
+
+@push('addon-style')
+<!-- Select2 -->
+<link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
+@endpush
+
 @section('content')
     <div class="content-wrapper">
         <div class="content-header">
@@ -46,7 +53,7 @@
                                     </div>
                                     <br>
                                     <a href="/balita" class="btn btn-primary">Kembali</a>
-                                    <button type="submit" class="btn btn-success btn-fill pull-right">Kirim</button>
+                                    <button type="submit" class="btn btn-success btn-fill pull-right">Simpan</button>
                                 </form>
                             </div>
                             <!-- /.card-body -->
@@ -62,6 +69,8 @@
 
 @endsection
 @push('addon-script')
+<!-- Select2 -->
+<script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
 <script type="text/javascript">
     $('select').select2({
         theme: 'bootstrap4',

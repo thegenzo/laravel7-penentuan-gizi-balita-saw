@@ -26,6 +26,8 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::resource('bbtb', 'BBTBController');
     
     Route::resource('imtu', 'IMTUController');
+
+    Route::get('/rekapan', 'SeleksiController@rekapanSAW');
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:admin,orangtua']], function () {

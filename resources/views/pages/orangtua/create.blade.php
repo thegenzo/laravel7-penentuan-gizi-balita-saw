@@ -1,6 +1,13 @@
 @extends('layout.app')
 
 @section('title', 'SPKBalita | Tambah Data')
+
+@push('addon-style')
+<!-- Select2 -->
+<link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
+@endpush
+
 @section('content')
     <div class="content-wrapper">
         <div class="content-header">
@@ -59,16 +66,26 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Nomor handphone yang bisa dihubungi</label>
-                                        <input type="number" name="no_hp" class="form-control" required>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Nomor handphone yang bisa dihubungi</label>
+                                                <input type="number" name="no_hp" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Nomor Darurat</label>
+                                                <input type="number" name="no_darurat" class="form-control" required>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Alamat</label>
                                         <textarea class="form-control" rows="4" columns="3" name="alamat" required></textarea>
                                     </div>
                                     <a href="/orangtua" class="btn btn-primary">Kembali</a>
-                                    <button type="submit" class="btn btn-success btn-fill pull-right">Kirim</button>
+                                    <button type="submit" class="btn btn-success btn-fill pull-right">Simpan</button>
                                 </form>
                             </div>
                             <!-- /.card-body -->
@@ -82,4 +99,12 @@
     </section>
     </div>
 @endsection
-
+@push('addon-script')
+<!-- Select2 -->
+<script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
+<script type="text/javascript">
+    $('select').select2({
+        theme: 'bootstrap4',
+    });
+</script>
+@endpush

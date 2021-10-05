@@ -34,9 +34,29 @@
                                     </div>
                                 </div>
                                 <hr>
+                                <h4>Bobot Kriteria</h4>
+                                <table class="table table-bordered table-hover">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th class="text-center">TB/U</th>
+                                            <th class="text-center">BB/U</th>
+                                            <th class="text-center">BB/TB</th>
+                                            <th class="text-center">IMT/U</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">0.25</td>
+                                            <td class="text-center">0.25</td>
+                                            <td class="text-center">0.25</td>
+                                            <td class="text-center">0.25</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <hr>
                                 <h4>Matriks awal</h4>
-                                <table class="table table-bordered">
-                                    <thead>
+                                <table class="table table-bordered table-hover">
+                                    <thead class="thead-dark">
                                         <tr>
                                             <th rowspan="2">Nama Balita</th>
                                             <th colspan="4" class="text-center">Kriteria</th>
@@ -51,17 +71,33 @@
                                     <tbody>
                                         <tr>
                                             <td>{{ $balita->orangtua->nama_balita }}</td>
-                                            <td class="text-center">{{ $balita->bobot_tbu }}</td>
-                                            <td class="text-center">{{ $balita->bobot_bbu }}</td>
-                                            <td class="text-center">{{ $balita->bobot_bbtb }}</td>
-                                            <td class="text-center">{{ $balita->bobot_imtu }}</td>
+                                            <td class="text-center">
+                                                {{ $balita->bobot_tbu }}
+                                                <br>
+                                                <small class="text-muted">{{ $balita->status_tbu }}</small>
+                                            </td>
+                                            <td class="text-center">
+                                                {{ $balita->bobot_bbu }}
+                                                <br>
+                                                <small class="text-muted">{{ $balita->status_bbu }}</small>
+                                            </td>
+                                            <td class="text-center">
+                                                {{ $balita->bobot_bbtb }}
+                                                <br>
+                                                <small class="text-muted">{{ $balita->status_bbtb }}</small>
+                                            </td>
+                                            <td class="text-center">
+                                                {{ $balita->bobot_imtu }}
+                                                <br>
+                                                <small class="text-muted">{{ $balita->status_imtu }}</small>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 <hr>
                                 <h4>Matriks Normalisasi</h4>
-                                <table class="table table-bordered">
-                                    <thead>
+                                <table class="table table-bordered table-hover">
+                                    <thead class="thead-dark">
                                         <tr>
                                             <th rowspan="2">Nama Balita</th>
                                             <th colspan="4" class="text-center">Kriteria</th>
